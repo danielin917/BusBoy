@@ -103,7 +103,7 @@
 </canmsg>
 
 <canmsg type="data" address="0x2c6" id="motcurrentvector">
-	<float name="iq"  mult="1" ff="0" length="32" startbit="0"/>
+	<float name="iq"  mult="1" off="0" length="32" startbit="0"/>
 	<float name="id" mult="1" off="0" length="32" startbit="32"/>
 </canmsg>
 
