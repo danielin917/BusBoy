@@ -33,6 +33,7 @@ def main():
 					for chunk in child:
 						multiplier = float(chunk.get('mult'))
 						offset = float(chunk.get('off'))
+						length = int(chunk.get('length'))/8
 						processed_val = find_val(data_array[2], chunk.get('name'))
 						if chunk.tag == 'float':
 							processed_val = float(processed_val)	
@@ -43,12 +44,23 @@ def main():
 							processed_val = float(processed_val)	
 							processed_val -= offset
 							processed_val /= multiplier
-							data += pack('I', processed_val)
+							if length <= 1:
+								data += pack('B', processed_val)
+							elif length == 2:	
+								data += pack('H', processed_val)
+							else:	
+								data += pack('I', processed_val)
 						elif chunk.tag == 'int' :
 							processed_val = float(processed_val)
 							processed_val -= offset
 							processed_val /= multiplier
-							data += pack('i', processed_val)
+							if length <= 1:
+								data += pack('b', processed_val)
+							elif length == 2:
+								data += pack('h', processed_val)
+							else:
+								data += pack('i', processed_val)
+							
 						elif chunk.tag == 'char':
 							processed_val = chr(processed_val)
 							processed_val -= offset
