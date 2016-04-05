@@ -1,0 +1,3 @@
+java -classpath LogToCSVSet
+
+pause

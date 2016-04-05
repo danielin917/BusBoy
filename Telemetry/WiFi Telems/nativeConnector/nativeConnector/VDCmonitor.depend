@@ -1,0 +1,65 @@
+# depslib dependency file v1.0
+1398668151 source:c:\users\ian\documents\matlab\solar\14code\ian\telemetry\nativeconnector\vdcmonitor\main.cpp
+	<iostream>
+	"Telemetry.h"
+
+1397939251 c:\users\ian\documents\matlab\solar\14code\ian\telemetry\nativeconnector\vdcmonitor\vdc.h
+	<functionlib.h>
+	"multithread.h"
+
+1398665227 c:\users\ian\documents\matlab\solar\14code\include\cpp\functionlib.h
+	"mathDefines.h"
+	<cmath>
+	<string>
+	<sstream>
+	<cstdlib>
+	<windows.h>
+	<cstdio>
+	<iostream>
+	<stdio.h>
+	<vector>
+	<sys/stat.h>
+
+1396472445 c:\users\ian\documents\matlab\solar\14code\include\cpp\mathdefines.h
+	<cmath>
+
+1370466184 c:\users\ian\documents\matlab\solar\14code\ian\telemetry\nativeconnector\vdcmonitor\multithread.h
+	<map>
+	<stdio.h>
+	<iostream>
+	<windows.h>
+	<process.h>
+
+1398666720 c:\users\ian\documents\matlab\solar\14code\ian\telemetry\nativeconnector\vdcmonitor\process.h
+	<functionlib.h>
+	"multithread.h"
+	<fstream>
+
+1398669876 c:\users\ian\documents\matlab\solar\14code\ian\telemetry\nativeconnector\vdcmonitor\telemetry.h
+	<windows.h>
+	<process.h>
+	<functionlib.h>
+	<childProcess.h>
+	<solarException.h>
+	<map>
+	<vector>
+
+1398667535 c:\users\ian\documents\matlab\solar\14code\include\cpp\process.h
+	<windows.h>
+	"functionlib.h"
+	<fstream>
+
+1398667508 c:\users\ian\documents\matlab\solar\14code\include\cpp\multithread.h
+	<map>
+	<stdio.h>
+	<iostream>
+
+1398669314 c:\users\ian\documents\matlab\solar\14code\include\cpp\childprocess.h
+	<windows.h>
+	"solarException.h"
+	"functionlib.h"
+	<fstream>
+
+1398669792 c:\users\ian\documents\matlab\solar\14code\include\cpp\solarexception.h
+	<exception>
+

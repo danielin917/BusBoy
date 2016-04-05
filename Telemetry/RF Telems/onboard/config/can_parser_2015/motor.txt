@@ -1,0 +1,772 @@
+[
+  {
+    "canid": "0x2c0",
+    "dlc": "6",
+    "name": "motid",
+    "description": "Motor Identifier",
+    "fields": {
+      "i3": {
+        "bitpos": 0,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "int",
+        "description": "???"
+      },
+      "i2": {
+        "bitpos": 8,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "int",
+        "description": "???"
+      },
+      "i1": {
+        "bitpos": 16,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "int",
+        "description": "???"
+      },
+      "i0": {
+        "bitpos": 24,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "int",
+        "description": "???"
+      },
+      "serid": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "description": "???"
+      }
+    }
+  },
+  {
+    "canid": "0x2c1",
+    "dlc": "8",
+    "name": "motflag",
+    "description": "Motor Flags",
+    "fields": {
+      "rxerr": {
+        "bitpos": 0,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "uint",
+        "description": "RX Error count"
+      },
+      "txerr": {
+        "bitpos": 8,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "uint",
+        "description": "TX Error count"
+      },
+      "mot": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "description": "???"
+      },
+      "err": {
+        "bitpos": 32,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "uint",
+        "description": "Error flags"
+      },
+      "lim": {
+        "bitpos": 49,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "uint",
+        "description": "Limit flags"
+      }
+    }
+  },
+  {
+    "canid": "0x2c2",
+    "dlc": "8",
+    "name": "motbus",
+    "description": "Motor power bus data",
+    "fields": {
+      "volt": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Volts",
+        "description": "Bus voltage."
+      },
+      "curr": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Amps",
+        "description": "Bus current."
+      }
+    }
+  },
+  {
+    "canid": "0x2c3",
+    "dlc": "8",
+    "name": "motvel",
+    "description": "Motor speed data",
+    "fields": {
+      "motvel": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "RPM?",
+        "description": "Motor velocity."
+      },
+      "vehvel": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "m/s",
+        "description": "Vehicle speed."
+      }
+    }
+  },
+  {
+    "canid": "0x2c4",
+    "dlc": "8",
+    "name": "motphasecurrent",
+    "description": "motor controller phase current data",
+    "fields": {
+      "phaseb": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "amps",
+        "description": "RMS current in motor phase B"
+      },
+      "phasec": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "amps",
+        "description": "RMS current in motor phase C"
+      }
+    }
+  },
+  {
+    "canid": "0x2c5",
+    "dlc": "8",
+    "name": "motvoltvector",
+    "description": "motor controller voltage vector measurement",
+    "fields": {
+      "vq": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "volts",
+        "description": "real component of applied non-rotating voltage vector to motor"
+      },
+      "vd": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "volts",
+        "description": "imaginary component of applied non-rotating voltage vector to motor"
+      }
+    }
+  },
+  {
+    "canid": "0x2c6",
+    "dlc": "8",
+    "name": "motcurrentvector",
+    "description": "motor controller current vector measurement",
+    "fields": {
+      "iq": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "amps",
+        "description": "real component of applied non-rotating current vector to motor"
+      },
+      "id": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "amps",
+        "description": "imaginary component of applied non-rotating current vector to motor"
+      }
+    }
+  },
+  {
+    "canid": "0x2c7",
+    "dlc": "8",
+    "name": "motbackemf",
+    "description": "Motor back EMF data",
+    "fields": {
+      "bemfq": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "description": "Back EMF Q?"
+      },
+      "bemfd": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "description": "Back EMF D?"
+      }
+    }
+  },
+  {
+    "canid": "0x2c8",
+    "dlc": "8",
+    "name": "motrail0",
+    "description": "Motor controller power rail data",
+    "fields": {
+      "reserved": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Volts",
+        "description": "these bits reserved"
+      },
+      "supply": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Volts",
+        "description": "voltage level of 15V power rail"
+      }
+    }
+  },
+  {
+    "canid": "0x2c9",
+    "dlc": "8",
+    "name": "motrail1",
+    "description": "Motor controller power rail data",
+    "fields": {
+      "dsp": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Volts",
+        "description": "Motor controller DSP voltage."
+      },
+      "fpga": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Volts",
+        "description": "Motor controller FPGA voltage."
+      }
+    }
+  },
+  {
+    "canid": "0x2cb",
+    "dlc": "8",
+    "name": "mottemp0",
+    "description": "Motor controller temperature data",
+    "fields": {
+      "motor": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "deg C",
+        "description": "internal temp of motor"
+      },
+      "heatsink": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "deg C",
+        "description": "internal temp of heatsink in main IPM"
+      }
+    }
+  },
+  {
+    "canid": "0x2cc",
+    "dlc": "8",
+    "name": "mottemp1",
+    "description": "Motor controller temperature data",
+    "fields": {
+      "dsp": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "deg C",
+        "description": "Motor controller DSP board temperature."
+      },
+      "reserved": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "deg C",
+        "description": "these bits reserved"
+      }
+    }
+  },
+  {
+    "canid": "0x2ce",
+    "dlc": "8",
+    "name": "motodo",
+    "description": "Motor controller odometry",
+    "fields": {
+      "odometer": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "m?",
+        "description": "Motor controller odometer."
+      },
+      "amphours": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "polynomial": [0.0, 3600.0],
+        "unit": "Coulombs",
+        "description": "Observed motor energy in Amp-Seconds."
+      }
+    }
+  },
+  {
+    "canid": "0x2d7",
+    "dlc": "8",
+    "name": "motslip",
+    "description": "Motor controller slip speed when driving an induction motor; we don't use induction motor",
+    "fields": {
+      "reserved": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "description": "these bits reserved"
+      },
+      "slipspeed": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "polynomial": [0.0, 3600.0],
+        "unit": "Hz",
+        "description": "slipspeed when driving induction motor"
+      }
+    }
+  },
+  {
+    "canid": "0x2e0",
+    "dlc": "6",
+    "name": "motid2",
+    "description": "Motor Identifier",
+    "fields": {
+      "i3": {
+        "bitpos": 0,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "int",
+        "description": "???"
+      },
+      "i2": {
+        "bitpos": 8,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "int",
+        "description": "???"
+      },
+      "i1": {
+        "bitpos": 16,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "int",
+        "description": "???"
+      },
+      "i0": {
+        "bitpos": 24,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "int",
+        "description": "???"
+      },
+      "serid": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "description": "???"
+      }
+    }
+  },
+  {
+    "canid": "0x2e1",
+    "dlc": "8",
+    "name": "motflag2",
+    "description": "Motor Flags",
+    "fields": {
+      "rxerr": {
+        "bitpos": 0,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "uint",
+        "description": "RX Error count"
+      },
+      "txerr": {
+        "bitpos": 8,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "uint",
+        "description": "TX Error count"
+      },
+      "mot": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "description": "???"
+      },
+      "err": {
+        "bitpos": 32,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "uint",
+        "description": "Error flags"
+      },
+      "lim": {
+        "bitpos": 49,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "uint",
+        "description": "Limit flags"
+      }
+    }
+  },
+  {
+    "canid": "0x2e2",
+    "dlc": "8",
+    "name": "motbus2",
+    "description": "Motor power bus data",
+    "fields": {
+      "volt": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Volts",
+        "description": "Bus voltage."
+      },
+      "curr": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Amps",
+        "description": "Bus current."
+      }
+    }
+  },
+  {
+    "canid": "0x2e3",
+    "dlc": "8",
+    "name": "motvel2",
+    "description": "Motor speed data",
+    "fields": {
+      "motvel": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "RPM?",
+        "description": "Motor velocity."
+      },
+      "vehvel": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "m/s",
+        "description": "Vehicle speed."
+      }
+    }
+  },
+  {
+    "canid": "0x2e4",
+    "dlc": "8",
+    "name": "motphasecurrent2",
+    "description": "motor controller phase current data",
+    "fields": {
+      "phaseb": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "amps",
+        "description": "RMS current in motor phase B"
+      },
+      "phasec": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "amps",
+        "description": "RMS current in motor phase C"
+      }
+    }
+  },
+  {
+    "canid": "0x2e5",
+    "dlc": "8",
+    "name": "motvoltvector2",
+    "description": "motor controller voltage vector measurement",
+    "fields": {
+      "vq": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "volts",
+        "description": "real component of applied non-rotating voltage vector to motor"
+      },
+      "vd": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "volts",
+        "description": "imaginary component of applied non-rotating voltage vector to motor"
+      }
+    }
+  },
+  {
+    "canid": "0x2e6",
+    "dlc": "8",
+    "name": "motcurrentvector2",
+    "description": "motor controller current vector measurement",
+    "fields": {
+      "iq": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "amps",
+        "description": "real component of applied non-rotating current vector to motor"
+      },
+      "id": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "amps",
+        "description": "imaginary component of applied non-rotating current vector to motor"
+      }
+    }
+  },
+  {
+    "canid": "0x2e7",
+    "dlc": "8",
+    "name": "motbackemf2",
+    "description": "Motor back EMF data",
+    "fields": {
+      "bemfq": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "description": "Back EMF Q?"
+      },
+      "bemfd": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "description": "Back EMF D?"
+      }
+    }
+  },
+  {
+    "canid": "0x2e8",
+    "dlc": "8",
+    "name": "motrail0_2",
+    "description": "Motor controller power rail data",
+    "fields": {
+      "reserved": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Volts",
+        "description": "these bits reserved"
+      },
+      "supply": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Volts",
+        "description": "voltage level of 15V power rail"
+      }
+    }
+  },
+  {
+    "canid": "0x2e9",
+    "dlc": "8",
+    "name": "motrail1_2",
+    "description": "Motor controller power rail data",
+    "fields": {
+      "dsp": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Volts",
+        "description": "Motor controller DSP voltage."
+      },
+      "fpga": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Volts",
+        "description": "Motor controller FPGA voltage."
+      }
+    }
+  },
+  {
+    "canid": "0x2eb",
+    "dlc": "8",
+    "name": "mottemp0_2",
+    "description": "Motor controller temperature data",
+    "fields": {
+      "motor": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "deg C",
+        "description": "internal temp of motor"
+      },
+      "heatsink": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "deg C",
+        "description": "internal temp of heatsink in main IPM"
+      }
+    }
+  },
+  {
+    "canid": "0x2ec",
+    "dlc": "8",
+    "name": "mottemp1_2",
+    "description": "Motor controller temperature data",
+    "fields": {
+      "dsp": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "deg C",
+        "description": "Motor controller DSP board temperature."
+      },
+      "reserved": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "deg C",
+        "description": "these bits reserved"
+      }
+    }
+  },
+  {
+    "canid": "0x2ee",
+    "dlc": "8",
+    "name": "motodo2",
+    "description": "Motor controller odometry",
+    "fields": {
+      "odometer": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "m?",
+        "description": "Motor controller odometer."
+      },
+      "amphours": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "polynomial": [0.0, 3600.0],
+        "unit": "Coulombs",
+        "description": "Observed motor energy in Amp-Seconds."
+      }
+    }
+  },
+  {
+    "canid": "0x2f7",
+    "dlc": "8",
+    "name": "motslip2",
+    "description": "Motor controller slip speed when driving an induction motor; we don't use induction motor",
+    "fields": {
+      "reserved": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "description": "these bits reserved"
+      },
+      "slipspeed": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "polynomial": [0.0, 3600.0],
+        "unit": "Hz",
+        "description": "slipspeed when driving induction motor"
+      }
+    }
+  },
+  {
+    "canid": "0x441",
+    "dlc": "8",
+    "name": "micro_current",
+    "description": "bms current measurement of 12V power drawn by all micro systems",
+    "fields": {
+      "micro": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "A",
+        "description": "current drawn by microsystems from 12V rail"
+      },
+      "motor": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "A",
+        "description": "current drawn by motor; positive denotes power consumed"
+      }
+    }
+  }
+]

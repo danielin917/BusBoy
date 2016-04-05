@@ -1,0 +1,59 @@
+{
+  "processes": [
+    {
+      "name": "Root Data Bus",
+      "cmd": ["python", "data_bus.py", "--bind", "10000"],
+      "autostart": "true"
+    },
+    {
+      "name": "Landlubber Data Bus",
+      "cmd": ["python", "data_bus.py", "--bind", "10000", "landlubber:10000"],
+      "autostart": "false"
+    },
+    {
+      "name": "Flush Records",
+      "cmd": ["python", "flush.py", "127.0.0.1:10000"],
+      "autostart": "false"
+    },
+    {
+      "name": "Legacy Logger",
+      "cmd": ["python", "legacy_logger.py", "127.0.0.1:10000"],
+      "autostart": "true"
+    },
+    {
+      "name": "Legacy Bridge",
+      "cmd": ["python", "legacy_bridge.py", "127.0.0.1:10000"],
+      "autostart": "false"
+    },
+    {
+      "name": "Viewer",
+      "cmd": ["python", "viewer.py", "127.0.0.1:10000"],
+      "autostart": "false"
+    },
+    {
+      "name": "Fake Sender",
+      "cmd": ["python", "fake_sender.py", "127.0.0.1:10000"],
+      "autostart": "false"
+    },
+    {
+      "name": "CAN Bridge",
+      "cmd": ["python", "can_bridge.py", "-d", "COM4", "127.0.0.1:10000"],
+      "autostart": "true"
+    },
+    {
+      "name": "CAN Parser",
+      "cmd": ["python", "can_parser.py", "127.0.0.1:10000"],
+      "autostart": "true"
+    },
+    {
+      "name": "Chat",
+      "cmd": ["python", "chat.py", "127.0.0.1:10000"],
+      "autostart": "false"
+    },
+    {
+      "name": "GUI",
+      "cmd": ["python", "TelemGui.py", "127.0.0.1:10000"],
+      "autostart": "false"
+    }
+  ]
+}

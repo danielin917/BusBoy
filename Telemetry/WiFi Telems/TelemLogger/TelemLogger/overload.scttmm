@@ -1,0 +1,11 @@
+motflag 0
+motbus 0 volt curr
+motvel 0 motvel vehvel
+motcmd 0 vel trq
+lighting 0 lighting_state
+problembutton 0
+driverresponse status
+motvoltvec 0 img real
+motcurvec 0 img real
+motbackemf 0 bemfq bemfd
+batpower 0 cutoff balance cell_vmax

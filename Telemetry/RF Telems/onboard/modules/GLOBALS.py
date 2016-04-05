@@ -1,0 +1,17 @@
+MAX_BITS_PER_SECOND = 250000
+
+SPEED_UNITS_MULTIPLIER = [2.23694, 3.6, 1]  #(mph, kph, m/s)
+
+SPEED_UNITS = ['mph', 'km/h', 'm/s']
+
+MOTOR_CONSTANT = .1765
+
+BATT_OVERVOLT_THRESHOLD = 4.2
+
+BATT_UNDERVOLT_THRESHOLD = 2.5
+
+BATT_OVERTEMP_THRESHOLD = 45
+
+WS_OVERTEMP_THRESHOLD = 150
+
+MAX_BATTERY_CAPACITY = 12060 #A-s  this is of the old pack - update it once we have new pack

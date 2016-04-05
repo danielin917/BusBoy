@@ -1,0 +1,4 @@
+motbus 3 volt curr
+bps_master 3 vmin vmax temp SOC_master
+packvoltage 3 voltage
+cur0 3 array batt motor

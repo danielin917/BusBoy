@@ -1,0 +1,1179 @@
+[
+  {
+    "canid": "0x400",
+    "dlc": "8",
+    "name": "bms_volts_0",
+    "description": "voltage measurements for modules 0-3",
+    "fields": {
+      "volt_0": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 0 voltage measurement"
+      },
+      "volt_1": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 1 voltage measurement"
+      },
+      "volt_2": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 2 voltage measurement"
+      },
+      "volt_3": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 3 voltage measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x401",
+    "dlc": "8",
+    "name": "bms_volts_1",
+    "description": "voltage measurements for modules 4-7",
+    "fields": {
+      "volt_4": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 4 voltage measurement"
+      },
+      "volt_5": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 5 voltage measurement"
+      },
+      "volt_6": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 6 voltage measurement"
+      },
+      "volt_7": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 7 voltage measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x402",
+    "dlc": "8",
+    "name": "bms_volts_2",
+    "description": "voltage measurements for modules 8-11",
+    "fields": {
+      "volt_8": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 8 voltage measurement"
+      },
+      "volt_9": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 9 voltage measurement"
+      },
+      "volt_10": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 10 voltage measurement"
+      },
+      "volt_11": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 11 voltage measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x403",
+    "dlc": "8",
+    "name": "bms_volts_3",
+    "description": "voltage measurements for modules 12-15",
+    "fields": {
+      "volt_12": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 12 voltage measurement"
+      },
+      "volt_13": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 13 voltage measurement"
+      },
+      "volt_14": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 14 voltage measurement"
+      },
+      "volt_15": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 15 voltage measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x404",
+    "dlc": "8",
+    "name": "bms_volts_4",
+    "description": "voltage measurements for modules 16-19",
+    "fields": {
+      "volt_16": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 16 voltage measurement"
+      },
+      "volt_17": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 17 voltage measurement"
+      },
+      "volt_18": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 18 voltage measurement"
+      },
+      "volt_19": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 19 voltage measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x405",
+    "dlc": "8",
+    "name": "bms_volts_5",
+    "description": "voltage measurements for modules 20-23",
+    "fields": {
+      "volt_20": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 20 voltage measurement"
+      },
+      "volt_21": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 21 voltage measurement"
+      },
+      "volt_22": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 22 voltage measurement"
+      },
+      "volt_23": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 23 voltage measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x406",
+    "dlc": "8",
+    "name": "bms_volts_6",
+    "description": "voltage measurements for modules 24-27",
+    "fields": {
+      "volt_24": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 24 voltage measurement"
+      },
+      "volt_25": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 25 voltage measurement"
+      },
+      "volt_26": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 26 voltage measurement"
+      },
+      "volt_27": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 27 voltage measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x407",
+    "dlc": "8",
+    "name": "bms_volts_7",
+    "description": "voltage measurements for modules 28-31",
+    "fields": {
+      "volt_28": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 28 voltage measurement"
+      },
+      "volt_29": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 29 voltage measurement"
+      },
+      "volt_30": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 30 voltage measurement"
+      },
+      "volt_31": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 31 voltage measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x408",
+    "dlc": "8",
+    "name": "bms_volts_8",
+    "description": "voltage measurements for modules 32-35",
+    "fields": {
+      "volt_32": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 32 voltage measurement"
+      },
+      "volt_33": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 33 voltage measurement"
+      },
+      "volt_34": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 34 voltage measurement"
+      },
+      "volt_35": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 35 voltage measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x409",
+    "dlc": "8",
+    "name": "bms_volts_9",
+    "description": "voltage measurements for modules 36-39",
+    "fields": {
+      "volt_36": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 36 voltage measurement"
+      },
+      "volt_37": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 37 voltage measurement"
+      },
+      "volt_38": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 38 voltage measurement"
+      },
+      "volt_39": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 39 voltage measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x40a",
+    "dlc": "8",
+    "name": "bms_volts_10",
+    "description": "voltage measurements for module 40",
+    "fields": {
+      "volt_40": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 40 voltage measurement"
+      },
+      "volt_41": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 41 voltage measurement"
+      },
+      "volt_42": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "module 42 voltage measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x410",
+    "dlc": "8",
+    "name": "bmsvoltextremes",
+    "description": "min/max voltages with respective module index",
+    "fields": {
+      "mindex": {
+        "bitpos": 0,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "uint",
+        "description": "index of module with min voltage"
+      },
+      "maxdex": {
+        "bitpos": 8,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "uint",
+        "units": "V",
+        "description": "index of module with max voltage"
+      },
+      "min": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "min module voltage in pack"
+      },
+      "max": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "polynomial": [0.0, 0.0001],
+        "fmt": "uint",
+        "units": "V",
+        "description": "max module voltage in pack"
+      },
+      "balance": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "polynomial": [0.0, 0.0001],
+        "fmt": "uint",
+        "units": "V",
+        "description": "diff between high and low voltages"
+      }
+    }
+  },
+  {
+    "canid": "0x411",
+    "dlc": "8",
+    "name": "bmsvoltextremes_aux",
+    "description": "min/max voltages of aux pack",
+    "fields": {
+      "mindex": {
+        "bitpos": 0,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "uint",
+        "description": "index of module with min voltage"
+      },
+      "maxdex": {
+        "bitpos": 8,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "uint",
+        "units": "V",
+        "description": "index of module with max voltage"
+      },
+      "min": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [0.0, 0.0001],
+        "units": "V",
+        "description": "min module voltage in pack"
+      },
+      "max": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "polynomial": [0.0, 0.0001],
+        "fmt": "uint",
+        "units": "V",
+        "description": "max module voltage in pack"
+      },
+      "balance": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "polynomial": [0.0, 0.0001],
+        "fmt": "uint",
+        "units": "V",
+        "description": "diff between high and low voltages"
+      }
+    }
+  },
+  {
+    "canid": "0x412",
+    "dlc": "8",
+    "name": "bms_pack_volts",
+    "description": "bms sum of module voltages to get pack voltage; contains 2 pack voltages due to 2015 having reconfigurable battery",
+    "fields": {
+      "pack0": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "description": "total voltage of lower pack"
+      },
+      "pack1": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "description": "total voltage of higher pack"
+      }
+    }
+  },
+  {
+    "canid": "0x420",
+    "dlc": "8",
+    "name": "bms_temp_0",
+    "description": "temp measurements for modules 0-3",
+    "fields": {
+      "temp_0": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 0 temp measurement"
+      },
+      "temp_1": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 1 temp measurement"
+      },
+      "temp_2": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 2 temp measurement"
+      },
+      "temp_3": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 3 temp measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x421",
+    "dlc": "8",
+    "name": "bms_temp_1",
+    "description": "temp measurements for modules 4-7",
+    "fields": {
+      "temp_4": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 4 temp measurement"
+      },
+      "temp_5": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 5 temp measurement"
+      },
+      "temp_6": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 6 temp measurement"
+      },
+      "temp_7": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 7 temp measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x422",
+    "dlc": "8",
+    "name": "bms_temp_2",
+    "description": "temp measurements for modules 8-11",
+    "fields": {
+      "temp_8": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 8 temp measurement"
+      },
+      "temp_9": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 9 temp measurement"
+      },
+      "temp_10": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 10 temp measurement"
+      },
+      "temp_11": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 11 temp measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x423",
+    "dlc": "8",
+    "name": "bms_temp_3",
+    "description": "temp measurements for modules 12-15",
+    "fields": {
+      "temp_12": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 12 temp measurement"
+      },
+      "temp_13": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 13 temp measurement"
+      },
+      "temp_14": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 14 temp measurement"
+      },
+      "temp_15": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 15 temp measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x424",
+    "dlc": "8",
+    "name": "bms_temp_4",
+    "description": "temp measurements for modules 16-19",
+    "fields": {
+      "temp_16": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 16 temp measurement"
+      },
+      "temp_17": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 17 temp measurement"
+      },
+      "temp_18": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 18 temp measurement"
+      },
+      "temp_19": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 19 temp measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x425",
+    "dlc": "8",
+    "name": "bms_temp_5",
+    "description": "temp measurements for modules 20-23",
+    "fields": {
+      "temp_20": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 20 temp measurement"
+      },
+      "temp_21": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 21 temp measurement"
+      },
+      "temp_22": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 22 temp measurement"
+      },
+      "temp_23": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 23 temp measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x426",
+    "dlc": "8",
+    "name": "bms_temp_6",
+    "description": "temp measurements for modules 24-27",
+    "fields": {
+      "temp_24": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 24 temp measurement"
+      },
+      "temp_25": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 25 temp measurement"
+      },
+      "temp_26": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 26 temp measurement"
+      },
+      "temp_27": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 27 temp measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x427",
+    "dlc": "8",
+    "name": "bms_temp_7",
+    "description": "temp measurements for modules 28-31",
+    "fields": {
+      "temp_28": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 28 temp measurement"
+      },
+      "temp_29": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 29 temp measurement"
+      },
+      "temp_30": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 30 temp measurement"
+      },
+      "temp_31": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 31 temp measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x428",
+    "dlc": "8",
+    "name": "bms_temp_8",
+    "description": "temp measurements for modules 32-35",
+    "fields": {
+      "temp_32": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 32 temp measurement"
+      },
+      "temp_33": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 33 temp measurement"
+      },
+      "temp_34": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 34 temp measurement"
+      },
+      "temp_35": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 35 temp measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x429",
+    "dlc": "8",
+    "name": "bms_temp_9",
+    "description": "temp measurements for modules 36-39",
+    "fields": {
+      "temp_36": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 36 temp measurement"
+      },
+      "temp_37": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 37 temp measurement"
+      },
+      "temp_38": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 38 temp measurement"
+      },
+      "temp_39": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 39 temp measurement"
+      }
+    }
+  },
+  {
+    "canid": "0x42a",
+    "dlc": "8",
+    "name": "bms_temp_10",
+    "description": "temp measurements for module 40",
+    "fields": {
+      "temp_40": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 40 temp measurement"
+      },
+      "temp_41": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 41 temp measurement"
+      },
+      "temp_42": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "module 42 temp measurement"
+      }
+      
+    }
+  },
+  {
+    "canid": "0x430",
+    "dlc": "8",
+    "name": "bmstempextremes",
+    "description": "min/max temp with respective module index",
+    "fields": {
+      "min": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273, 0.01],
+        "unit": "deg C",
+        "description": "min module temp"
+      },
+      "mindex": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "description": "index of module with min temp"
+      },
+      "max": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "polynomial": [-273.0, 0.01],
+        "unit": "deg C",
+        "description": "max module temp"
+      },
+      "maxdex": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "uint",
+        "description": "index of module with max temp"
+      }
+    }
+  },
+  {
+    "canid": "0x440",
+    "dlc": "8",
+    "name": "ab_current",
+    "description": "current measurements for array and battery",
+    "fields": {
+      "array": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "A",
+        "description": "array current; positive denotes power produced"
+      },
+      "battery": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "A",
+        "description": "battery current; positive denotes power output"
+      }
+    }
+  },
+  {
+    "canid": "0x441",
+    "dlc": "8",
+    "name": "micro_current",
+    "description": "bms current measurement of 12V power drawn by all micro systems",
+    "fields": {
+      "micro": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "A",
+        "description": "current drawn by microsystems from 12V rail"
+      },
+      "motor": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "A",
+        "description": "current drawn by motor; positive denotes power consumed"
+      }
+    }
+  },
+  {
+    "canid": "0x450",
+    "dlc": "4",
+    "name": "SOC",
+    "description": "SOC calculated by bms",
+    "fields": {
+      "SOC": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "%",
+        "description": "SOC calculateed as a percentage"
+      }
+    }
+  }
+]

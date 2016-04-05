@@ -1,0 +1,1779 @@
+<document>
+
+<!--canstructure.xml-->
+
+<!--************************************ FIXED ***********************************-->
+
+<!--WE STILL NEED TO MAKE SURE EVERYTHING IN THIS SECTION IS AS WE WANT IT AND ADD MISSING MESSAGES-->
+
+<!--DATA-->
+
+<!-- **************************************************************************
+			Driver Controls & Interface
+*************************************************************************** -->
+
+<!--CONTROLS_ID-->
+<canmsg type="data" address="0x220" id="wheelboot">
+</canmsg>
+
+<!--MOTOR_DRIVE_ID-->
+<canmsg type="data" address="0x221" id="motcmd">
+	<float name="vel" mult="1" off="0" length="32" startbit="0"/>
+	<float name="trq" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!--MOTOR_POWER_ID-->
+<canmsg type="data" address="0x222" id="motbuscmd">
+	<float name="cur"  mult="1" off="0" length="32" startbit="0"/>
+	<float name="cur2" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!--LIGHTING_ID-->
+<canmsg type="data" address="0x224" id="lighting">
+	<int name="lighting_state" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--CRUISE_STATUS_ID-->
+<canmsg type="data" address="0x227" id="cruise">
+	<float name="speed" mult="1" off="0" length="32" startbit="0"/>
+	<float name="limit" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!--NOS_SET_ID-->
+<canmsg type="data" address="0x228" id="cruiseconstants">
+	<float name="p" mult="1" off="0" length="32" startbit="0"/>
+	<float name="i" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!--BMS_RESET_ID-->
+<canmsg type="data" address="0x229" id="cruisestate">
+	<float name="error"    mult="1" off="0" length="32" startbit="0"/>
+	<float name="integral" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!--YES_NO_ID-->
+<canmsg type="data" address="0x22b" id="driverresponse">
+	<uint name="status" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--AUTO_RESET_ID-->
+<canmsg type="data" address="0x230" id="cruiseterms12">
+	<float name="term1" mult="1" off="0" length="32" startbit="0"/>
+	<float name="term2" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!--AUTO_RESET_ACK_ID-->
+<canmsg type="data" address="0x231" id="cruiseterms34">
+	<float name="term3" mult="1" off="0" length="32" startbit="0"/>
+	<float name="term4" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!--SQUAWK_ID-->
+<canmsg type="data" address="0x233" id="squawk">
+	<uint name="code" length="8" />
+</canmsg>
+
+<!--RGN_WARN_ID-->
+<canmsg type="data" address="0x235" id="regenwarn">
+	<uint name="norgn1" length="8" />
+	<uint name="norgn2" length="8" />
+</canmsg>
+
+<!--LIGHTING_ID_BACK-->	
+<canmsg type="data" address="0x2a0" id="lightsboot_rear">
+</canmsg>
+
+<!--LIGHTING_ID_FRONT-->	
+<canmsg type="data" address="0x2b0" id="lightsboot_front">
+</canmsg>
+
+<!--CHAT_SYN_ID-->
+<canmsg type="data" address="0x2d1" id="chatSyn">
+	<uint name="length" mult="1" off="0" length="8" startbit="0" />
+</canmsg>
+
+<!--CHAT_ACK_ID-->
+<canmsg type="data" address="0x2d2" id="chatAck">
+	<uint name="length" mult="1" off="0" length="8" startbit="0" />
+</canmsg>
+
+<!--CHAT_MSG_ID-->
+<canmsg type="data" address="0x2d3" id="chatData">
+	<uint name="text" mult="1" off="0" length="56" startbit="0" />
+	<uint name="idx" mult="1" off="0" length="8" startbit="56" />
+</canmsg>
+
+<!--CHAT_DONE_ID-->
+<canmsg type="data" address="0x2d4" id="chatDone">
+	<uint name="cksum" mult="1" off="0" length="8" startbit="0" />
+</canmsg>
+
+<!--CHAT_OK_ID-->
+<canmsg type="data" address="0x2d5" id="chatOk">
+	<uint name="ok" mult="1" off="0" length="8" startbit="0" />
+</canmsg>
+
+<!-- **************************************************************************
+			Wavesculptor Data 
+*************************************************************************** -->
+
+<!--MOTOR_ID-->
+<canmsg type="data" address="0x240" id="motid">
+	<int name="i3"     length="8" />
+	<int name="i2"     length="8" />
+	<int name="i1"     length="8" />
+	<int name="i0"     length="8" />
+	<uint name="serid" length="16"/>
+</canmsg>
+
+<!--MC_STATUS_INFO_ID-->
+<canmsg type="data" address="0x241" id="motflag">
+	<uint name="lim" mult="1" off="0" length="16" startbit="0"/>
+	<uint name="err" mult="1" off="0" length="16" startbit="16"/>
+	<uint name="mot" mult="1" off="0" length="16" startbit="32"/>
+	<uint name="txerr" mult="1" off="0" length="8" startbit="48"/>
+	<uint name="rxerr" mult="1" off="0" length="8" startbit="56"/>
+</canmsg>
+
+<!--MOTOR_VOLTAGE_ID-->
+<canmsg type="data" address="0x242" id="motbus">
+	<float name="volt" length="32" />
+	<float name="curr" length="32" />
+</canmsg>
+
+<!--MOTOR_SPEED_ID-->
+<canmsg type="data" address="0x243" id="motvel">
+	<float name="motvel" mult="1" off="0" length="32" startbit="0"/>
+	<float name="vehvel" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!--MOTOR_PHASE_CURRENT_ID-->
+<canmsg type="data" address="0x244" id="motphase">
+	<float name="b" mult="1" off="0" length="32" startbit="0"/>
+	<float name="a" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!--MOTOR_VOLTAGE_VECTOR_ID-->
+<canmsg type="data" address="0x245" id="motvoltvec">
+	<float name="img"  mult="1" off="0" length="32" startbit="0"/>
+	<float name="real" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!--MOTOR_CURRENT_VECTOR_ID-->
+<canmsg type="data" address="0x246" id="motcurvec">
+	<float name="img"  mult="1" off="0" length="32" startbit="0"/>
+	<float name="real" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!--MOTOR_BACKEMF_ID-->
+<canmsg type="data" address="0x247" id="motbackemf">
+	<float name="bemfq" mult="1" off="0" length="32" startbit="0"/>
+	<float name="bemfd" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!--MOTOR_VOLTAGE_15V_ID-->
+<canmsg type="data" address="0x248" id="motrail0">
+	<float name="ref"    mult="1" off="0" length="32" startbit="0"/>
+	<float name="supply" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!--MOTOR_VOLTAGE_RAIL-->
+<canmsg type="data" address="0x249" id="motrail1">
+	<float name="dsp"  mult="1" off="0" length="32" startbit="0"/>
+	<float name="fpga" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!--MOTOR_TEMP_ID-->
+<canmsg type="data" address="0x24b" id="mottemp0">
+	<float name="motor"    mult="1" off="0" length="32" startbit="0"/>
+	<float name="phasec" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!--MOTOR_IPM_DSP_TEMP-->
+<canmsg type="data" address="0x24c" id="mottemp1">
+	<float name="dsp"   mult="1" off="0" length="32" startbit="0"/>
+	<float name="phaseb" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!--MOTOR_BUS_AMPHRS-->
+<canmsg type="data" address="0x24e" id="motodo">
+	<float name="odometer" mult="1" off="0" length="32" startbit="0"/>
+	<float name="amphours" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!--MOTOR_SLIP_SPEED_ID-->
+<canmsg type="data" address="0x257" id="motslip">
+	<float name="temp" mult="1" off="0" length="32" startbit="0"/>
+	<float name="slipspeed" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!--CMD-->
+
+<!-- **************************************************************************
+			Driver Controls & Interface
+*************************************************************************** -->
+
+<!--MOTOR_DRIVE_ID-->
+<canmsg type="cmd" address="0x221" id="motcmd">
+	<float op="float(data['velocity'])"/>
+	<float op="float(data['current'])"/>
+</canmsg>
+
+<!--LIGHTING_ID-->
+<canmsg type="cmd" address="0x224" id="lighting">
+	<uint op="int(data['cmd'])"/>
+</canmsg>
+
+<!--CRUISE_SET_ID-->
+<canmsg type="cmd" address="0x225" id="setcruise">
+	<float op="float(data['speed'])"/>
+</canmsg>
+
+<!--CRUISE_SET_RESP_ID-->
+<canmsg type="cmd" address="0x226" id="setcruisecon">
+	<float op="float(data['p'])"/>
+	<float op="float(data['i'])"/>
+</canmsg>
+
+<!--CRUISE_LIMIT_ID-->
+<canmsg type="cmd" address="0x22a" id="setspeedlimit">
+	<float op="float(data['speed'])"/>
+</canmsg>
+
+<!--TEXT_DISABLE_ID-->
+<canmsg type="cmd" address="0x22c" id="setcurrentlimit">
+	<float op="float(data['normal'])"/>
+	<float op="float(data['nos'])"/>
+</canmsg>
+
+<!--CRUISE_ITERATION_ID-->
+<canmsg type="data" address="0x237" id="cruiseiteration">
+	<char name="cruise_iteration" mult="1" off="0"   length="8" startbit="0"/>
+</canmsg>
+
+<!--MOTOR_CMD_STATE-->
+<canmsg type="data" address="0x238" id="motorcmdstate">"
+	<char name="motor_cmd_state" mult="1" off="0"   length="8" startbit="0"/>
+</canmsg>
+
+<!-- **************************************************************************
+			Battery Management System
+*************************************************************************** -->
+
+<!--RELAY_OPENED-->
+<canmsg type="data" address="0x1" id="relay_fault">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+	<int name="overcurrent"   mult="1" off="0" length="1" startbit="5"/>
+</canmsg>
+
+<!--BMS_BOARD_CURRENT-->
+<canmsg type="data" address="0x130" id="bpscurrent">
+	<int name="current" mult="0.00212765957447" off="0"   length="16" startbit="0"/>
+</canmsg>
+
+<!--BMS_BOARD_CURR_RAW-->
+<canmsg type="data" address="0x131" id="bpsrawcurrent">
+	<int name="current" mult="1" off="0"   length="16" startbit="0"/>
+</canmsg>
+
+<!--BMS_DIS_TARGET-->
+<canmsg type="data" address="0x140" id="dischargetarget">
+	<uint name="voltage" mult="0.00006866559853" off="0"  length="16" startbit="0"/>
+</canmsg>
+
+<!--BMS_MODULE_NUM-->
+<canmsg type="data" address="0x150" id="bps_master1">
+	<uint name ="low_module"  mult="1"  off="0" length="8" startbit="0"/>
+	<uint name ="high_module" mult="1"  off="0" length="8" startbit="8"/>
+	<uint name ="high_temp"   mult="1"  off="0" length="8" startbit="16"/>
+	<uint name ="relay"       mult="1"  off="0" length="8" startbit="24"/>
+</canmsg>
+
+<!--BMS_EXTREMES-->
+<canmsg type="data" address="0x151" id="bps_master">
+	<uint name="vmin"       mult="0.00006866559853"   off="0"   length="16" startbit="0"/>
+	<uint name="vmax"       mult="0.00006866559853"   off="0"   length="16" startbit="16"/>
+	<uint name="temp"       mult="0.00228885328450"   off="-20" length="16" startbit="32"/>
+	<uint name="SOC_master" mult="0.0015259021896696" off="0"   length="16" startbit="48"/>
+</canmsg>
+
+<!--PACK_VOLTAGE-->
+<canmsg type="data" address="0x152" id="packvoltage">
+	<float name="voltage" mult="1" off="0"  length="32" startbit="0"/>
+</canmsg>
+
+<!--VICOR_TEMPERATURE-->
+<canmsg type="data" address="0x153" id="vicortemp">
+	<uint name="temp" mult="0.00228885328450" off="-20"  length="16" startbit="0"/>
+</canmsg>
+
+<!--MASTER_AMBIENT_TEMPERATURE-->
+<canmsg type="data" address="0x154" id="mastertemp">
+	<uint name="temp" mult="0.00251773861295" off="-40"  length="16" startbit="0"/>
+</canmsg>
+
+<!--MODULE 0-->
+<canmsg type="data" address="0x100" id="bps0"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 1-->
+<canmsg type="data" address="0x101" id="bps1"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 2-->
+<canmsg type="data" address="0x102" id="bps2"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 3-->
+<canmsg type="data" address="0x103" id="bps3"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 4-->
+<canmsg type="data" address="0x104" id="bps4"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 5-->
+<canmsg type="data" address="0x105" id="bps5"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 6-->
+<canmsg type="data" address="0x106" id="bps6"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 7-->
+<canmsg type="data" address="0x107" id="bps7"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 8-->
+<canmsg type="data" address="0x108" id="bps8"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 9-->
+<canmsg type="data" address="0x109" id="bps9"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 10-->
+<canmsg type="data" address="0x10A" id="bps10"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 11-->
+<canmsg type="data" address="0x10B" id="bps11"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 12-->
+<canmsg type="data" address="0x10C" id="bps12"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 13-->
+<canmsg type="data" address="0x10D" id="bps13"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 14-->
+<canmsg type="data" address="0x10E" id="bps14"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 15-->
+<canmsg type="data" address="0x10F" id="bps15"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 16-->
+<canmsg type="data" address="0x110" id="bps16"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 17-->
+<canmsg type="data" address="0x111" id="bps17"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 18-->
+<canmsg type="data" address="0x112" id="bps18"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 19-->
+<canmsg type="data" address="0x113" id="bps19"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 20-->
+<canmsg type="data" address="0x114" id="bps20"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 21-->
+<canmsg type="data" address="0x115" id="bps21"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 22-->
+<canmsg type="data" address="0x116" id="bps22"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 23-->
+<canmsg type="data" address="0x117" id="bps23"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 24-->
+<canmsg type="data" address="0x118" id="bps24"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 25-->
+<canmsg type="data" address="0x119" id="bps25"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 26-->
+<canmsg type="data" address="0x11A" id="bps26"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 27-->
+<canmsg type="data" address="0x11B" id="bps27"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 28-->
+<canmsg type="data" address="0x11C" id="bps28"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 29-->
+<canmsg type="data" address="0x11D" id="bps29"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 30-->
+<canmsg type="data" address="0x11E" id="bps30"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 31-->
+<canmsg type="data" address="0x11F" id="bps31"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 32-->
+<canmsg type="data" address="0x120" id="bps32"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 33-->
+<canmsg type="data" address="0x121" id="bps33"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 34-->
+<canmsg type="data" address="0x122" id="bps34"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg> 
+
+<!--MODULE 35-->
+<canmsg type="data" address="0x123" id="bps35"> 
+	<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+	<uint name="therm"   	mult="0.00228885328450"   off="-20" length="16" startbit="16"/> 
+	<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+	<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+</canmsg>
+
+<!--MODULE FAILURE 0-->
+<canmsg type="data" address="0x2" id="modulefault0">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 1-->
+<canmsg type="data" address="0x3" id="modulefault1">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 2-->
+<canmsg type="data" address="0x4" id="modulefault2">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 3-->
+<canmsg type="data" address="0x5" id="modulefault3">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 4-->
+<canmsg type="data" address="0x6" id="modulefault4">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 5-->
+<canmsg type="data" address="0x7" id="modulefault5">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 6-->
+<canmsg type="data" address="0x8" id="modulefault6">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 7-->
+<canmsg type="data" address="0x9" id="modulefault7">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 8-->
+<canmsg type="data" address="0xA" id="modulefault8">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 9-->
+<canmsg type="data" address="0xB" id="modulefault9">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 10-->
+<canmsg type="data" address="0xC" id="modulefault10">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 11-->
+<canmsg type="data" address="0xD" id="modulefault11">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 12-->
+<canmsg type="data" address="0xE" id="modulefault12">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 13-->
+<canmsg type="data" address="0xF" id="modulefault13">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 14-->
+<canmsg type="data" address="0x10" id="modulefault14">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 15-->
+<canmsg type="data" address="0x11" id="modulefault15">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 16-->
+<canmsg type="data" address="0x12" id="modulefault16">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 17-->
+<canmsg type="data" address="0x13" id="modulefault17">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 18-->
+<canmsg type="data" address="0x14" id="modulefault18">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 19-->
+<canmsg type="data" address="0x15" id="modulefault19">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 20-->
+<canmsg type="data" address="0x16" id="modulefault20">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 21-->
+<canmsg type="data" address="0x17" id="modulefault21">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 22-->
+<canmsg type="data" address="0x18" id="modulefault22">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 23-->
+<canmsg type="data" address="0x19" id="modulefault23">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 24-->
+<canmsg type="data" address="0x1A" id="modulefault24">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 25-->
+<canmsg type="data" address="0x1B" id="modulefault25">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 26-->
+<canmsg type="data" address="0x1C" id="modulefault26">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 27-->
+<canmsg type="data" address="0x1D" id="modulefault27">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 28-->
+<canmsg type="data" address="0x1E" id="modulefault28">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 29-->
+<canmsg type="data" address="0x1F" id="modulefault29">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 30-->
+<canmsg type="data" address="0x20" id="modulefault30">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 31-->
+<canmsg type="data" address="0x21" id="modulefault31">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 32-->
+<canmsg type="data" address="0x22" id="modulefault32">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 33-->
+<canmsg type="data" address="0x23" id="modulefault33">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 34-->
+<canmsg type="data" address="0x24" id="modulefault34">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg>
+
+<!--MODULE FAILURE 35-->
+<canmsg type="data" address="0x25" id="modulefault35">
+	<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+	<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+	<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+	<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+	<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+</canmsg> 
+
+<!--AUTOCAL 0-->
+<canmsg type="data" address="0x160" id="autocal0">
+	<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+	<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--AUTOCAL 1-->
+<canmsg type="data" address="0x161" id="autocal1">
+	<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+	<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--AUTOCAL 2-->
+<canmsg type="data" address="0x162" id="autocal2">
+	<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+	<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--AUTOCAL 3-->
+<canmsg type="data" address="0x163" id="autocal3">
+	<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+	<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--AUTOCAL 4-->
+<canmsg type="data" address="0x164" id="autocal4">
+	<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+	<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--AUTOCAL 5-->
+<canmsg type="data" address="0x165" id="autocal5">
+	<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+	<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--AUTOCAL 6-->
+<canmsg type="data" address="0x166" id="autocal6">
+	<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+	<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--AUTOCAL 7-->
+<canmsg type="data" address="0x167" id="autocal7">
+	<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+	<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--AUTOCAL 8-->
+<canmsg type="data" address="0x168" id="autocal8">
+	<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+	<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--AUTOCAL 9-->
+<canmsg type="data" address="0x169" id="autocal9">
+	<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+	<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--AUTOCAL 10-->
+<canmsg type="data" address="0x16A" id="autocal10">
+	<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+	<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--AUTOCAL 11-->
+<canmsg type="data" address="0x16B" id="autocal11">
+	<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+	<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--AUTOCAL 12-->
+<canmsg type="data" address="0x16C" id="autocal12">
+	<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+	<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--AUTOCAL 13-->
+<canmsg type="data" address="0x16D" id="autocal13">
+	<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+	<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--AUTOCAL 14-->
+<canmsg type="data" address="0x16E" id="autocal14">
+	<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+	<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--AUTOCAL 15-->
+<canmsg type="data" address="0x16F" id="autocal15">
+	<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+	<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--AUTOCAL 16-->
+<canmsg type="data" address="0x170" id="autocal16">
+	<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+	<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--AUTOCAL 17-->
+<canmsg type="data" address="0x171" id="autocal17">
+	<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+	<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--RAW AUTOCAL 0-->
+<canmsg type="data" address="0x180" id="rawautocal0">
+	<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+	<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+	<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+	<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+</canmsg>
+
+<!--RAW AUTOCAL 1-->
+<canmsg type="data" address="0x181" id="rawautocal1">
+	<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+	<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+	<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+	<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+</canmsg>
+
+<!--RAW AUTOCAL 2-->
+<canmsg type="data" address="0x182" id="rawautocal2">
+	<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+	<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+	<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+	<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+</canmsg>
+
+<!--RAW AUTOCAL 3-->
+<canmsg type="data" address="0x183" id="rawautocal3">
+	<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+	<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+	<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+	<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+</canmsg>
+
+<!--RAW AUTOCAL 4-->
+<canmsg type="data" address="0x184" id="rawautocal4">
+	<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+	<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+	<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+	<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+</canmsg>
+
+<!--RAW AUTOCAL 5-->
+<canmsg type="data" address="0x185" id="rawautocal5">
+	<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+	<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+	<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+	<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+</canmsg>
+
+<!--RAW AUTOCAL 6-->
+<canmsg type="data" address="0x186" id="rawautocal6">
+	<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+	<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+	<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+	<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+</canmsg>
+
+<!--RAW AUTOCAL 7-->
+<canmsg type="data" address="0x187" id="rawautocal7">
+	<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+	<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+	<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+	<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+</canmsg>
+
+<!--RAW AUTOCAL 8-->
+<canmsg type="data" address="0x188" id="rawautocal8">
+	<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+	<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+	<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+	<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+</canmsg>
+
+<!--RAW AUTOCAL 9-->
+<canmsg type="data" address="0x189" id="rawautocal9">
+	<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+	<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+	<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+	<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+</canmsg>
+
+<!--RAW AUTOCAL 10-->
+<canmsg type="data" address="0x18A" id="rawautocal10">
+	<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+	<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+	<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+	<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+</canmsg>
+
+<!--RAW AUTOCAL 11-->
+<canmsg type="data" address="0x18B" id="rawautocal11">
+	<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+	<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+	<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+	<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+</canmsg>
+
+<!--RAW AUTOCAL 12-->
+<canmsg type="data" address="0x18C" id="rawautocal12">
+	<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+	<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+	<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+	<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+</canmsg>
+
+<!--RAW AUTOCAL 13-->
+<canmsg type="data" address="0x18D" id="rawautocal13">
+	<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+	<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+	<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+	<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+</canmsg>
+
+<!--RAW AUTOCAL 14-->
+<canmsg type="data" address="0x18E" id="rawautocal14">
+	<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+	<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+	<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+	<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+</canmsg>
+
+<!--RAW AUTOCAL 15-->
+<canmsg type="data" address="0x18F" id="rawautocal15">
+	<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+	<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+	<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+	<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+</canmsg>
+
+<!--RAW AUTOCAL 16-->
+<canmsg type="data" address="0x190" id="rawautocal16">
+	<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+	<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+	<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+	<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+</canmsg>
+
+<!--RAW AUTOCAL 17-->
+<canmsg type="data" address="0x191" id="rawautocal17">
+	<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+	<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+	<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+	<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+</canmsg>
+
+<!--SOC DEBUG VALS 1-->
+<canmsg type="data" address="0x192" id="socdebugvi">
+	<float name="v" mult="1" off="0" length="32" startbit="0"/> 
+	<float name="i" mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--SOC DEBUG VALS 2-->
+<canmsg type="data" address="0x193" id="socdebugrsrp">
+	<float name="rs" mult="1" off="0" length="32" startbit="0"/> 
+	<float name="rp" mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--SOC DEBUG VALS 3-->
+<canmsg type="data" address="0x194" id="socdebugocvocvdd">
+	<float name="ocv" mult="1" off="0" length="32" startbit="0"/> 
+	<float name="ocvderivderiv" mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--SOC DEBUG VALS 4-->
+<canmsg type="data" address="0x195" id="socdebugrsddrpd">
+	<float name="rsderivderiv" mult="1" off="0" length="32" startbit="0"/> 
+	<float name="rpderiv" mult="1" off="0" length="32" startbit="32"/> 
+</canmsg>
+
+<!--SOC DEBUG VALS 5-->
+<canmsg type="data" address="0x196" id="socdebugsoc">
+	<float name="soc" mult="1" off="0" length="32" startbit="0"/>
+</canmsg>
+
+<!--MODIFY AUTOCAL 0-->
+<canmsg type="data" address="0x1A0" id="modautocal0">
+	<int name="enable" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--MODIFY AUTOCAL 1-->
+<canmsg type="data" address="0x1A1" id="modautocal1">
+	<int name="enable" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--MODIFY AUTOCAL 2-->
+<canmsg type="data" address="0x1A2" id="modautocal2">
+	<int name="enable" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--MODIFY AUTOCAL 3-->
+<canmsg type="data" address="0x1A3" id="modautocal3">
+	<int name="enable" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--MODIFY AUTOCAL 4-->
+<canmsg type="data" address="0x1A4" id="modautocal4">
+	<int name="enable" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--MODIFY AUTOCAL 5-->
+<canmsg type="data" address="0x1A5" id="modautocal5">
+	<int name="enable" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--MODIFY AUTOCAL 6-->
+<canmsg type="data" address="0x1A6" id="modautocal6">
+	<int name="enable" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--MODIFY AUTOCAL 7-->
+<canmsg type="data" address="0x1A7" id="modautocal7">
+	<int name="enable" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--MODIFY AUTOCAL 8-->
+<canmsg type="data" address="0x1A8" id="modautocal8">
+	<int name="enable" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--MODIFY AUTOCAL 9-->
+<canmsg type="data" address="0x1A9" id="modautocal9">
+	<int name="enable" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--MODIFY AUTOCAL 10-->
+<canmsg type="data" address="0x1AA" id="modautocal10">
+	<int name="enable" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--MODIFY AUTOCAL 11-->
+<canmsg type="data" address="0x1AB" id="modautocal11">
+	<int name="enable" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--MODIFY AUTOCAL 12-->
+<canmsg type="data" address="0x1AC" id="modautocal12">
+	<int name="enable" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--MODIFY AUTOCAL 13-->
+<canmsg type="data" address="0x1AD" id="modautocal13">
+	<int name="enable" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--MODIFY AUTOCAL 14-->
+<canmsg type="data" address="0x1AE" id="modautocal14">
+	<int name="enable" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--MODIFY AUTOCAL 15-->
+<canmsg type="data" address="0x1AF" id="modautocal15">
+	<int name="enable" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--MODIFY AUTOCAL 16-->
+<canmsg type="data" address="0x1B0" id="modautocal16">
+	<int name="enable" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--MODIFY AUTOCAL 17-->
+<canmsg type="data" address="0x1B1" id="modautocal17">
+	<int name="enable" mult="1" off="0" length="8" startbit="0"/>
+</canmsg>
+
+<!--AUX_BMS_ID 0-->
+<canmsg type="data" address="0x1D0" id="auxbms0">
+	<uint name="voltage" mult="0.00030518043" off="0" length="16" startbit="0"/>
+	<uint name="therm" mult="0.00228885328450"   off="-20" length="16" startbit="16"/>
+	<uint name="error" mult="1" off="0" length="8" startbit="32"/>
+</canmsg>
+
+
+<!--AUX_BMS_ID 1-->
+<canmsg type="data" address="0x1D1" id="auxbms1">
+	<uint name="voltage" mult="0.00030518043" off="0" length="16" startbit="0"/>
+	<uint name="therm" mult="0.00228885328450"   off="-20" length="16" startbit="16"/>
+	<uint name="error" mult="1" off="0" length="8" startbit="32"/>
+</canmsg>
+
+<!--End Battery-->
+
+
+<!-- **************************************************************************
+			Not Found Yet
+*************************************************************************** -->
+
+
+<!---->
+<canmsg type="data" address="0x24a" id="motfan">
+	<float name="drive" mult="1" off="0" length="32" startbit="0"/>
+	<float name="speed" mult="1" off="0" length="32" startbit="32"/>
+</canmsg>
+
+<!---->
+<canmsg type="data" address="0x24d" id="mottemp2">
+	<float name="phasea" mult="1" off="0" length="32" startbit="0"/>
+</canmsg>
+
+<!---->
+<canmsg type="data" address="0x700" id="test">
+	<uint name="angle" mult="-0.005263158" off="219.4736868" length="16" startbit="0"/>
+	<uint name="raw"   mult="1" off="0" length="0" startbit="0"/>
+</canmsg>
+
+<!---->
+<canmsg type="data" address="0x612" id="mppt6">
+	<uint name="uin"   mult="0.1"   off="0" length="16" startbit="0"/>
+	<uint name="iin"   mult="0.001" off="0" length="16" startbit="16"/>
+	<uint name="uout"  mult="0.1"   off="0" length="16" startbit="32"/>
+	<uint name="dc"    mult="1"     off="0" length="16" startbit="48"/>
+	<fake name="temp"  mult="0"     off="0" length="0"  value="0"/>
+	<fake name="flags" mult="0"     off="0" length="0"  value="0"/>
+	
+</canmsg>
+
+<!---->
+<canmsg type="data" address="0x613" id="mppt7">
+	<uint name="uin"   mult="0.1"   off="0" length="16" startbit="0"/>
+	<uint name="iin"   mult="0.001" off="0" length="16" startbit="16"/>
+	<uint name="uout"  mult="0.1"   off="0" length="16" startbit="32"/>
+	<uint name="dc"    mult="1"     off="0" length="16" startbit="48"/>
+	<fake name="temp"  mult="0"     off="0" length="0"  value="0"/>
+	<fake name="flags" mult="0"     off="0" length="0"  value="0"/>
+
+</canmsg>
+
+<!---->
+<canmsg type="data" address="0x614" id="mppt8">
+	<uint name="uin"   mult="0.1"   off="0" length="16" startbit="0"/>
+	<uint name="iin"   mult="0.001" off="0" length="16" startbit="16"/>
+	<uint name="uout"  mult="0.1"   off="0" length="16" startbit="32"/>
+	<uint name="dc"    mult="1"     off="0" length="16" startbit="48"/>
+	<fake name="temp"  mult="0"     off="0" length="0"  value="0"/>
+	<fake name="flags" mult="0"     off="0" length="0"  value="0"/>
+
+</canmsg>
+
+<!---->
+<canmsg type="data" address="0x615" id="mppt9">
+	<uint name="uin"   mult="0.1"   off="0" length="16" startbit="0"/>
+	<uint name="iin"   mult="0.001" off="0" length="16" startbit="16"/>
+	<uint name="uout"  mult="0.1"   off="0" length="16" startbit="32"/>
+	<uint name="dc"    mult="1"     off="0" length="16" startbit="48"/>
+	<fake name="temp"  mult="0"     off="0" length="0"  value="0"/>
+	<fake name="flags" mult="0"     off="0" length="0"  value="0"/>
+
+</canmsg>
+
+
+
+<!---->
+<canmsg type="data" address="0x611" id="mppt1">
+	<bigendian/>
+	<uint name="uin"   mult="0.15049" off="0" length="10" startbit="6"/>
+	<uint name="iin"   mult="0.00872" off="0" length="16" startbit="16"/>
+	<uint name="uout"  mult="0.20879" off="0" length="16" startbit="32"/>
+	<uint name="temp"  mult="5"       off="0" length="8" startbit="48"/>
+</canmsg>
+
+<!---->
+<canmsg type="data" address="0x600" id="mppt2">
+	<uint name="uin"  mult="0.01"  off="0" length="16" startbit="0"/>
+	<uint name="iin"  mult="0.001" off="0" length="16" startbit="16"/>
+	<uint name="uout" mult="0.01"  off="0" length="16" startbit="32"/>
+	<uint name="temp" mult="0.01"  off="0" length="16" startbit="48"/>
+</canmsg>
+
+<!---->
+<canmsg type="data" address="0x612" id="mppt3">
+	<bigendian/>
+	<uint name="uin"   mult="0.15049" off="0" length="10" startbit="6"/>
+	<uint name="iin"   mult="0.00872" off="0" length="16" startbit="16"/>
+	<uint name="uout"  mult="0.20879" off="0" length="16" startbit="32"/>
+	<uint name="temp"  mult="1"       off="0" length="16" startbit="48"/>
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x613" id="mppt4">
+	<uint name="uin"  mult="0.15049"  off="0" length="10" startbit="6"/>
+	<uint name="iin"  mult="0.00872" off="0" length="16" startbit="16"/>
+	<uint name="uout" mult="0.20879"  off="0" length="16" startbit="32"/>
+	<uint name="temp" mult="1"  off="0" length="16" startbit="48"/>
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x602" id="mppt5">
+	<uint name="uin"  mult="0.01"  off="0" length="16" startbit="0"/>
+	<uint name="iin"  mult="0.001" off="0" length="16" startbit="16"/>
+	<uint name="uout" mult="0.01"  off="0" length="16" startbit="32"/>
+	<uint name="temp" mult="0.01"  off="0" length="16" startbit="48"/>
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x6f0" id="arraytemp20a">
+	<uint name="an0" mult="1" off="0" length="16" startbit="0" />
+	<uint name="an1" mult="1" off="0" length="16" startbit="16" />
+	<uint name="an2" mult="1" off="0" length="16" startbit="32" />
+	<uint name="an3" mult="1" off="0" length="16" startbit="48" />
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x6f1" id="arraytemp20b">
+	<uint name="an0" mult="1" off="0" length="16" startbit="0" />
+	<uint name="an1" mult="1" off="0" length="16" startbit="16" />
+	<uint name="an2" mult="1" off="0" length="16" startbit="32" />
+	<uint name="an3" mult="1" off="0" length="16" startbit="48" />
+	<uint name="an4" mult="1" off="0" length="16" startbit="0" />
+	<uint name="an5" mult="1" off="0" length="16" startbit="16" />
+	<uint name="an6" mult="1" off="0" length="16" startbit="32" />
+	<uint name="an7" mult="1" off="0" length="16" startbit="48" />
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x6f2" id="arraytemp21a">
+	<uint name="an0" mult="1" off="0" length="16" startbit="0" />
+	<uint name="an1" mult="1" off="0" length="16" startbit="16" />
+	<uint name="an2" mult="1" off="0" length="16" startbit="32" />
+	<uint name="an3" mult="1" off="0" length="16" startbit="48" />
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x6f3" id="arraytemp21b">
+	<uint name="an0" mult="1" off="0" length="16" startbit="0" />
+	<uint name="an1" mult="1" off="0" length="16" startbit="16" />
+	<uint name="an2" mult="1" off="0" length="16" startbit="32" />
+	<uint name="an3" mult="1" off="0" length="16" startbit="48" />
+	<uint name="an4" mult="1" off="0" length="16" startbit="0" />
+	<uint name="an5" mult="1" off="0" length="16" startbit="16" />
+	<uint name="an6" mult="1" off="0" length="16" startbit="32" />
+	<uint name="an7" mult="1" off="0" length="16" startbit="48" />
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x6f4" id="arraytemp30a">
+	<uint name="an0" mult="1" off="0" length="16" startbit="0" />
+	<uint name="an1" mult="1" off="0" length="16" startbit="16" />
+	<uint name="an2" mult="1" off="0" length="16" startbit="32" />
+	<uint name="an3" mult="1" off="0" length="16" startbit="48" />
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x6f5" id="arraytemp30b">
+	<uint name="an0" mult="1" off="0" length="16" startbit="0" />
+	<uint name="an1" mult="1" off="0" length="16" startbit="16" />
+	<uint name="an2" mult="1" off="0" length="16" startbit="32" />
+	<uint name="an3" mult="1" off="0" length="16" startbit="48" />
+	<uint name="an4" mult="1" off="0" length="16" startbit="0" />
+	<uint name="an5" mult="1" off="0" length="16" startbit="16" />
+	<uint name="an6" mult="1" off="0" length="16" startbit="32" />
+	<uint name="an7" mult="1" off="0" length="16" startbit="48" />
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x6f6" id="arraytemp31a">
+	<uint name="an0" mult="1" off="0" length="16" startbit="0" />
+	<uint name="an1" mult="1" off="0" length="16" startbit="16" />
+	<uint name="an2" mult="1" off="0" length="16" startbit="32" />
+	<uint name="an3" mult="1" off="0" length="16" startbit="48" />
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x6f7" id="arraytemp31b">
+	<uint name="an0" mult="1" off="0" length="16" startbit="0" />
+	<uint name="an1" mult="1" off="0" length="16" startbit="16" />
+	<uint name="an2" mult="1" off="0" length="16" startbit="32" />
+	<uint name="an3" mult="1" off="0" length="16" startbit="48" />
+	<uint name="an4" mult="1" off="0" length="16" startbit="0" />
+	<uint name="an5" mult="1" off="0" length="16" startbit="16" />
+	<uint name="an6" mult="1" off="0" length="16" startbit="32" />
+	<uint name="an7" mult="1" off="0" length="16" startbit="48" />
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x6f8" id="arraytemp40a">
+	<uint name="an0" mult="1" off="0" length="16" startbit="0" />
+	<uint name="an1" mult="1" off="0" length="16" startbit="16" />
+	<uint name="an2" mult="1" off="0" length="16" startbit="32" />
+	<uint name="an3" mult="1" off="0" length="16" startbit="48" />
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x6f9" id="arraytemp40b">
+	<uint name="an0" mult="1" off="0" length="16" startbit="0" />
+	<uint name="an1" mult="1" off="0" length="16" startbit="16" />
+	<uint name="an2" mult="1" off="0" length="16" startbit="32" />
+	<uint name="an3" mult="1" off="0" length="16" startbit="48" />
+	
+	<uint name="an4" mult="1" off="0" length="16" startbit="0" />
+	<uint name="an5" mult="1" off="0" length="16" startbit="16" />
+	<uint name="an6" mult="1" off="0" length="16" startbit="32" />
+	<uint name="an7" mult="1" off="0" length="16" startbit="48" />
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x6fa" id="arraytemp41a">
+	<uint name="an0" mult="1" off="0" length="16" startbit="0" />
+	<uint name="an1" mult="1" off="0" length="16" startbit="16" />
+	<uint name="an2" mult="1" off="0" length="16" startbit="32" />
+	<uint name="an3" mult="1" off="0" length="16" startbit="48" />
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x6fb" id="arraytemp41b">
+	<uint name="an0" mult="1" off="0" length="16" startbit="0" />
+	<uint name="an1" mult="1" off="0" length="16" startbit="16" />
+	<uint name="an2" mult="1" off="0" length="16" startbit="32" />
+	<uint name="an3" mult="1" off="0" length="16" startbit="48" />
+	<uint name="an4" mult="1" off="0" length="16" startbit="0" />
+	<uint name="an5" mult="1" off="0" length="16" startbit="16" />
+	<uint name="an6" mult="1" off="0" length="16" startbit="32" />
+	<uint name="an7" mult="1" off="0" length="16" startbit="48" />
+</canmsg>
+
+
+<!--BATTERY_POWER_ID-->
+<canmsg type="data" address="0x500" id="powerboot">
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x610" id="fanboot">
+</canmsg>
+
+
+<!--BMPS_NODE_CHG_ID-->
+<canmsg type="data" address="0x300" id="currentboot">
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x620" id="trackboot">
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x504" id="battpower">
+	<uint name="cutoff"    mult="1" off="0" length="8"  startbit="0"/>
+	<uint name="balance"   mult="1" off="0" length="8"  startbit="8"/>
+	<uint name="cell_vmax" mult="1" off="0" length="16" startbit="16"/>
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x6e0" id="bootloader">
+	<uint name="board" mult="1" off="0" length="16" startbit="0"/>
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x6e2" id="bootack">
+	<uint name="mode"      mult="1" off="0" length="8"  startbit="0"/>
+	<uint name="result"    mult="1" off="0" length="8"  startbit="8"/>
+	<uint name="checksum"  mult="1" off="0" length="8"  startbit="16"/>
+	<uint name="null"      mult="1" off="0" length="8"  startbit="24"/>
+	<uint name="addr"      mult="1" off="0" length="16" startbit="32"/>
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x310" id="cur0">
+	<int name="array" mult="0.00105263157" off="0" length="16" startbit="0"/>
+	<int name="batt"  mult="0.00105263157"     off="0"       length="16" startbit="16"/>
+	<int name="motor" mult="0.001697793"     off="0"       length="16" startbit="32"/>
+	<int name="micro" mult="0.001697793"     off="0"       length="16" startbit="48"/>
+	<int name="array_raw" mult="1" off="0" startbit="0"/>
+	<int name="batt_raw"  mult="1" off="0" startbit="16"/>
+	<int name="motor_raw" mult="1" off="0" startbit="32"/>
+</canmsg>
+
+
+<!---->
+<canmsg type="data" address="0x311" id="curcount">
+	<float name="soccount"  mult="0.001" off="0"     length="32" startbit="0"/>
+	<uint name="vbat_check" mult="0.25"  off="0"     length="16" startbit="32"/>
+	<uint name="ibat_check" mult="0.25"  off="-1000" length="16" startbit="48"/>
+</canmsg>
+
+<!---->
+<canmsg type="cmd" address="0x2a1" id="lightbright">
+	<uint op="int(data['front'])"/>
+	<uint op="int(float(data['brake']) * 20)"/>
+	<uint op="int(float(data['left']) * 20)"/>
+	<uint op="int(float(data['right']) * 20)"/> m
+	<uint op="int(float(data['head']) * 20)"/>
+</canmsg>
+
+
+<!---->
+<canmsg type="cmd" address="0x2a2" id="lightflash">
+	<uint op="int(data['front'])"/>
+	<uint op="int(float(data['period']) * 255)"/>
+	<uint op="int(float(data['period']) * 255)"/>
+	<uint op="int(float(data['dc']) * int(float(data['period']) * 255))"/>
+	<uint op="int(float(data['dc']) * int(float(data['period']) * 255))"/>
+</canmsg>
+
+<!---->
+<canmsg type="cmd" address="0x22D" id="setcruiseterms12">
+	<float op="float(data['term1'])"/>
+	<float op="float(data['term2'])"/>
+</canmsg>
+
+<!---->
+<canmsg type="cmd" address="0x22E" id="setcruiseterms34">
+	<float op="float(data['term3'])"/>
+	<float op="float(data['term4'])"/>
+</canmsg>
+
+
+<!---->
+<canmsg type="cmd" address="0x22F" id="setproportionalsmoothing">
+	<float op="float(data['factor'])"/>
+</canmsg>
+
+
+<!---->
+<canmsg type="cmd" address="0x611" id="setfans">
+	<uint op="int(data['auto'])"/>
+	<uint op="int(data['state'])"/>
+</canmsg>
+
+
+<!---->
+<canmsg type="cmd" address="0x252" id="setmotor">
+	<uint op="65"/>
+	<uint op="67"/>
+	<uint op="84"/>
+	<uint op="77"/>
+	<uint op="79"/>
+	<uint op="84"/>
+	<uint op="int(float(data['motor']))"/>
+</canmsg>
+
+
+<!---->
+<canmsg type="cmd" address="0x622" id="setmanualmode">
+	<uint op="1"/>
+	<uint op="0"/>
+	<short op="int(data['torque'])"/>
+</canmsg>
+
+
+<!---->
+<canmsg type="cmd" address="0x622" id="settrackingmode">
+	<uint op="0"/>
+	<uint op="0"/>
+</canmsg>
+
+
+<!---->
+<canmsg type="cmd" address="0x628" id="settrackinglimits">
+	<uint op="int(data['lower'])"/>
+	<uint op="int(data['upper'])"/>
+</canmsg>
+
+
+<!---->
+<canmsg type="cmd" address="0x622" id="setpositionmode">
+	<uint op="2"/>
+	<uint op="0"/>
+	<uint op="int(data['position'])"/>
+</canmsg>
+
+
+<!---->
+<canmsg type="cmd" address="0x622" id="setcameramode">
+	<uint op="3"/>
+	<uint op="0"/>
+	<short op="int(float(data['offset']))"/>
+
+</canmsg>
+
+
+<!---->
+<canmsg type="cmd" address="0x6e8" id="reboot">
+	<uint op="int(data['board'])"/>
+	<uint op="int(data['mode'])"/>
+</canmsg>
+
+
+<!---->
+<canmsg type="cmd" address="0x501" id="batbal">
+	<uint op="int(data['enabled'])"/>
+</canmsg>
+
+
+<!---->
+<canmsg type="cmd" address="0x050" id="batcutoff">
+	<uint op="255"/>
+</canmsg>
+
+<!---->
+<canmsg type="cmd" address="0x711" id="reqmppt1"/>
+<canmsg type="cmd" address="0x712" id="reqmppt2"/>
+<canmsg type="cmd" address="0x713" id="reqmppt3"/>
+<canmsg type="cmd" address="0x714" id="reqmppt4"/>
+<canmsg type="cmd" address="0x715" id="reqmppt5"/>
+<canmsg type="cmd" address="0x716" id="reqmppt6"/>
+<canmsg type="cmd" address="0x717" id="reqmppt7"/>
+<canmsg type="cmd" address="0x718" id="reqmppt8"/>
+
+<canmsg type="data" address="0x711" id="reqmppt1"/>
+<canmsg type="data" address="0x712" id="reqmppt2"/>
+<canmsg type="data" address="0x713" id="reqmppt3"/>
+<canmsg type="data" address="0x714" id="reqmppt4"/>
+<canmsg type="data" address="0x715" id="reqmppt5"/>
+<canmsg type="data" address="0x716" id="reqmppt6"/>
+<canmsg type="data" address="0x717" id="reqmppt7"/>
+<canmsg type="data" address="0x718" id="reqmppt8"/>
+
+<!---->
+<canmsg type="data" address="0x90" id="cruisedebug">
+	<float name="grade" length="32" />
+	<float name="set_speed" length="32" />
+</canmsg>
+
+<!---->
+<canmsg type="data" address="0x313" id="breakerTemp">
+	<uint name="temp" mult=".002288818359" off="-20" length="16" startbit="0"/>
+</canmsg>
+
+<!--FSGP_AVERAGES-->
+<canmsg type="data" address="0x400" id="fsgp_averages">
+	<float name="power_in" length="32" />
+	<float name="power_out" length="32"/>
+</canmsg>
+
+</document>
