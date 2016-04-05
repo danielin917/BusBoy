@@ -15,7 +15,8 @@ def main():
 
 	tree = ET.parse(sys.argv[3])
 	root = tree.getroot()
-	with open(sys.argv[2]) as csv_handle:
+	with open(sys.argv[2], 'w+') as csv_handle:
+		csv_writer = csv.writer(csv_handle, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 		for line in data_lines:
 			data_array = line.split(",")
 			#Extract unix time stamp
@@ -52,8 +53,10 @@ def main():
 							processed_val -= offset
 							processed_val /= multiplier
 							data += pack('c', processeed_val)
-
-						return 0
+					print(data)
+					csv_writer.writerow([unix_ts, data])
+					return 0
+					
 
 def find_val(cmd_string, cmd):
 	cmd_array = cmd_string.split()
