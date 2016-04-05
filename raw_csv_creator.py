@@ -4,6 +4,7 @@ import re
 import xml.etree.ElementTree as ET
 import ctypes
 import struct
+import binascii
 from struct import *
 def main():
 	if len(sys.argv) != 4:
@@ -39,33 +40,34 @@ def main():
 							processed_val /= multiplier
 							data += pack('f', processed_val)
 						elif chunk.tag == 'uint':
-							processed_val = int(processed_val)	
+							processed_val = float(processed_val)	
 							processed_val -= offset
 							processed_val /= multiplier
 							data += pack('I', processed_val)
 						elif chunk.tag == 'int' :
-							processed_val = int(processed_val)
+							processed_val = float(processed_val)
 							processed_val -= offset
 							processed_val /= multiplier
-							data += pack('i', processeed_val)
+							data += pack('i', processed_val)
 						elif chunk.tag == 'char':
 							processed_val = chr(processed_val)
 							processed_val -= offset
 							processed_val /= multiplier
-							data += pack('c', processeed_val)
-					print(data)
-					csv_writer.writerow([unix_ts, data])
-					return 0
+							data += pack('c', processed_val)
+					csv_writer.writerow([unix_ts, binascii.hexlify(data)])
+				
 					
 
 def find_val(cmd_string, cmd):
 	cmd_array = cmd_string.split()
 	for value in cmd_array:
-		if value.find != -1:
+		if value.find(cmd) != -1:
 			val = re.search('".*?"', value)
 			val  = val.group(0)
-			val = val.strip('"')# can be done with RE but I don't feel like looking into it right now
+			val = val.strip('"')# can be done with RE but I don't feel like looking into it right now	
 			return val
+	print('failure')
+	return 0
 
 
 if __name__ =='__main__':
