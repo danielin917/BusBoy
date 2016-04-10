@@ -1,0 +1,16 @@
+chatSyn 0 length
+chatAck 0 length
+chatData 0 text idx
+chatDone 0 cksum
+chatOk 0 ok
+motflag 0
+motbus 1 volt curr
+motvel 1 motvel vehvel
+motcmd 1 vel trq
+lighting 0 lighting_state
+problembutton 0
+driverresponse status
+motvoltvec 1 img real
+motcurvec 1 img real
+motbackemf 1 bemfq bemfd
+batpower 1 cutoff balance cell_vmax

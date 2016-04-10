@@ -1,0 +1,67 @@
+[
+  {
+    "canid": "0x310",
+    "dlc": "8",
+    "name": "cur0",
+    "description": "Current sense data",
+    "fields": {
+      "array": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "polynomial": [-0.205993808, 0.001045661],
+        "fmt": "int",
+        "unit": "Amps",
+        "description": "Array current."
+      },
+      "batt": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "polynomial": [0.14436816, 0.00102863],
+        "fmt": "int",
+        "unit": "Amps",
+        "description": "Battery current."
+      },
+      "motor": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "polynomial": [0.0945, 0.00105],
+        "fmt": "int",
+        "unit": "Amps",
+        "description": "Motor current."
+      },
+      "micro": {
+        "bitpos": 48,
+        "bitsize": 16,
+        "endian": "little",
+        "polynomial": [0.0, 0.001697793],
+        "fmt": "int",
+        "unit": "Amps",
+        "description": "Micro current."
+      },
+      "array_raw": {
+        "bitpos": 0,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "int",
+        "description": "Array current."
+      },
+      "batt_raw": {
+        "bitpos": 16,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "int",
+        "description": "Battery current."
+      },
+      "motor_raw": {
+        "bitpos": 32,
+        "bitsize": 16,
+        "endian": "little",
+        "fmt": "int",
+        "description": "Motor current."
+      }
+    }
+  }
+]

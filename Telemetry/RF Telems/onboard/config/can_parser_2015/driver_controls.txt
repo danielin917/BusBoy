@@ -1,0 +1,169 @@
+[
+  {
+    "canid": "0x221",
+    "dlc": "8",
+    "name": "motcmd",
+    "description": "Motor controller command limits",
+    "fields": {
+      "vel": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "rpm",
+        "description": "Commanded vehicle velocity."
+      },
+      "trq": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Amps",
+        "description": "Commanded motor current."
+      }
+    }
+  },
+  {
+    "canid": "0x222",
+    "dlc": "8",
+    "name": "motbuscmd",
+    "description": "Motor controller bus command limits",
+    "fields": {
+      "reserved": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Amps",
+        "description": "these bits reserved."
+      },
+      "cur": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Amps",
+        "description": "Commanded vehicle bus current"
+      }
+    }
+  },
+  {
+    "canid": "0x224",
+    "dlc": "1",
+    "name": "lighting",
+    "description": "Lighting state",
+    "fields": {
+      "lighting_state": {
+        "bitpos": 0,
+        "bitsize": 8,
+        "endian": "little",
+        "fmt": "uint",
+        "description": "Lighting flags."
+      }
+    }
+  },
+  {
+    "canid": "0x711",
+    "dlc": "8",
+    "name": "cruise",
+    "description": "Cruise control status",
+    "fields": {
+      "grade": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "%",
+        "description": "estimated grade from cruise algorithm"
+      },
+      "speed": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "m/s",
+        "description": "current set speed value for cruise control"
+      }
+    }
+  },
+  {
+    "canid": "0x201",
+    "dlc": "8",
+    "name": "motcmd2",
+    "description": "Motor controller command limits",
+    "fields": {
+      "vel": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "m/s",
+        "description": "Commanded vehicle velocity."
+      },
+      "trq": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Amps",
+        "description": "Commanded motor current."
+      }
+    }
+  },
+  {
+    "canid": "0x202",
+    "dlc": "8",
+    "name": "motbuscmd2",
+    "description": "Motor controller 2 bus command limits",
+    "fields": {
+      "reserved": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Amps",
+        "description": "these bits reserved."
+      },
+      "cur": {
+        "bitpos": 32,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Amps",
+        "description": "Commanded vehicle bus current"
+      }
+    }
+  },
+  {
+    "canid": "0x261",
+    "dlc": "8",
+    "name": "RELAY_CTRL_ID",
+    "description": "Relay Ctrl",
+    "fields": {
+      "reserved": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Amps",
+        "description": "these bits reserved."
+      }
+    }
+  },
+  {
+    "canid": "0x261",
+    "dlc": "8",
+    "name": "RELAY_CTRL_STATUS",
+    "description": "Relay Ctrl Status",
+    "fields": {
+      "reserved": {
+        "bitpos": 0,
+        "bitsize": 32,
+        "endian": "little",
+        "fmt": "float",
+        "unit": "Amps",
+        "description": "these bits reserved."
+      }
+    }
+  }
+]

@@ -1,0 +1,77 @@
+<?php
+error_reporting(0);
+define("START_OF_TEXT",2);
+define("END_OF_TRANSMISSION",29);
+define("ACKNOWLEDGE",6);
+define("NEGATIVE_ACKNOWLEDGE",21);
+$ret="";
+$file=$argv[1];
+if($argv[4]=="NO_PASSWORD")
+{
+	$argv[4]="";
+}
+$db=mysqli_connect($argv[2],$argv[3],$argv[4],$argv[5]);
+if(mysqli_connect_error())
+{
+trigger_error ("COULD NOT CONNECT",E_USER_WARNING );
+file_put_contents($argv[6],chr(NEGATIVE_ACKNOWLEDGE).chr(END_OF_TRANSMISSION)."\n");
+exit();
+} else {
+file_put_contents($argv[6],chr(ACKNOWLEDGE).chr(END_OF_TRANSMISSION)."\n");
+}
+clearstatcache(false, $file);
+$lastpos = 0;
+while (true) {
+    clearstatcache(false, $file);
+    $len = filesize($file);
+    if ($len < $lastpos) {
+        //file deleted or reset
+        $lastpos = $len;
+    }
+    elseif ($len > $lastpos) {
+        $f = fopen($file, "rb");
+        if ($f === false)
+            die();
+        fseek($f, $lastpos);
+        while (!feof($f)) {
+			usleep(100000); //0.1 s
+            $buffer = fread($f, 4096);
+			$result=mysqli_query($db,$buffer);
+			if(is_object($result))
+			{
+				$rows=mysqli_fetch_all($result,MYSQLI_ASSOC);
+				if(array_key_exists(0,$rows))
+				{
+					flush();
+					foreach($rows[0] as $k => $v)
+					{
+						$ret=$ret. $k."|";
+					}
+					$ret=$ret. chr(START_OF_TEXT);
+					flush();
+					foreach($rows as $rownum => $row)
+					{
+						foreach($row as $k => $v)
+						{
+							$ret=$ret. $v."|";
+						}
+						$ret=$ret. "\n";
+						flush();
+					}
+					$ret=$ret. "\n";
+					flush();
+				} else {
+					$ret=$ret.chr(END_OF_TRANSMISSION);
+				}
+			} else {
+				$ret=$ret.chr(END_OF_TRANSMISSION);
+			}
+			file_put_contents($argv[6],$ret);
+			$ret="";
+        }
+        $lastpos = ftell($f);
+        fclose($f);
+    }
+	usleep(100000); //0.1 s
+}
+?>

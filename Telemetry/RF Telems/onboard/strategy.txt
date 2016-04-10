@@ -1,0 +1,34 @@
+{
+  "processes": [
+    {
+      "name": "Downstream Data Bus",
+      "cmd": ["python", "data_bus.py", "--bind", "10000", "jbrogers-glaptop:10000"],
+      "autostart": "false"
+    },
+    {
+      "name": "Flush Records",
+      "cmd": ["python", "flush.py", "127.0.0.1:10000"],
+      "autostart": "false"
+    },
+    {
+      "name": "Legacy Logger",
+      "cmd": ["python", "legacy_logger.py", "127.0.0.1:10000"],
+      "autostart": "true"
+    },
+    {
+      "name": "Legacy Bridge",
+      "cmd": ["python", "legacy_bridge.py", "127.0.0.1:10000"],
+      "autostart": "true"
+    },
+    {
+      "name": "Viewer",
+      "cmd": ["python", "viewer.py", "127.0.0.1:10000"],
+      "autostart": "false"
+    },
+    {
+      "name": "Chat",
+      "cmd": ["python", "chat.py", "127.0.0.1:10000"],
+      "autostart": "false"
+    }
+  ]
+}

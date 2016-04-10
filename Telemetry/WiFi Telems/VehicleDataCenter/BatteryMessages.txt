@@ -1,0 +1,231 @@
+This file contains a list of canstructure.xml entries that have either been modified to the point of requiring a rewrite of the telemetry GUI, or are new to the Generation dev cycle
+
+----------------------
+---Modified Entries---
+----------------------
+The following entries have had their ids or data formats changed (including a complete deletion of an entry) and will require reformatting in telemetry.
+This section will be formatted with the previous entry, followed by the new entry. An short explanation of the change then follows.
+
+---Relay Opened---
+Previous entry:
+	<canmsg type="data" address="0x396" id="relay_fault">
+		<uint name="module" mult="1" off="0" length="8" startbit="0"/>
+		<uint name="issue"  mult="1" off="0" length="8" startbit="8"/>
+	</canmsg>
+	
+New entry:
+	<canmsg type="data" address="0x1" id="relay_fault">
+		<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+		<int name="undervolt" mult="1" off="0" length="1" startbit="1"/>
+		<int name="overvolt" mult="1" off="0" length="1" startbit="2"/>
+		<int name="overtemp" mult="1" off="0" length="1" startbit="3"/>
+		<int name="disconnect" mult="1" off="0" length="1" startbit="4"/>
+		<int name="overcurrent" mult="1" off="0" length="1" startbit="5"/>
+	</canmsg>
+	
+Explanation:
+	The relay-opened message has been reformatted to contain only the cause of the relay opening.
+	It was this way for ASC'12, so I am uncertain why the message still included a module number.
+Fix:
+	Need to add a module for this message
+
+	
+---Unknown---
+Previous entry:
+	<canmsg type="data" address="0x397" id="bps_fault">
+		<uint name="low_voltage"            mult="1" off="0" length="8" startbit="0"/>
+		<uint name="high_voltage"           mult="1" off="0" length="8" startbit="8"/>
+		<uint name="first_unplugged_module" mult="1" off="0" length="8" startbit="16"/>
+	</canmsg>
+	
+New entry:
+	---DELETED---
+	
+Explanation:
+	I am unsure what this was, exactly, but it is no longer used by BMS.
+	I do not think any information is lost by this deletion because additional messages have been created to cover what appears to be this information
+Fix:
+	Switch messages which use this to get high and low voltage to use bps_master1. Create a new message for unplugged module or add to bps_master1?
+
+	
+---Modules with Most Extreme Statistics---
+Previous Entry:
+	<canmsg type="data" address="0x398" id="bps_master1">
+		<uint name ="low_module"  mult="1"  off="0" length="8" startbit="0"/>
+		<uint name ="high_module" mult="1"  off="0" length="8" startbit="8"/>
+		<uint name ="high_temp"   mult="1"  off="0" length="8" startbit="16"/>
+		<uint name ="relay"       mult="1"  off="0" length="8" startbit="24"/>
+		<uint name="coulomb"      mult="0.0018131082627" off="0" length="16" startbit="32"/>
+	</canmsg>
+	
+New entry:
+	<canmsg type="data" address="0x150" id="bps_master1">
+		<uint name ="low_module"  mult="1"  off="0" length="8" startbit="0"/>
+		<uint name ="high_module" mult="1"  off="0" length="8" startbit="8"/>
+		<uint name ="high_temp"   mult="1"  off="0" length="8" startbit="16"/>
+		<uint name ="relay"       mult="1"  off="0" length="8" startbit="24"/>
+	</canmsg>
+	
+Explanation:
+	Master no longer counts coulombs. May be added in again later.
+
+
+
+---Battery Module Data---
+Previous Entry:
+	<canmsg type="data" address="0x4##" id="bps#"> 
+		<uint name="voltage" mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+		<uint name="therm"   mult="0.002288818359"   off="-20" length="16" startbit="16"/> 
+		<uint name="trouble" mult="1" off="0" length="8" startbit="32"/>
+	</canmsg>
+
+	# indicates a number that varies with the module number (0-37)
+
+New Entry:
+	<canmsg type="data" address="0x1##" id="bps#"> 
+		<uint name="voltage" 	mult="0.00006866559853" off="0"   length="16" startbit="0"/> 
+		<uint name="therm"   	mult="0.002288818359"   off="-20" length="16" startbit="16"/> 
+		<uint name="trouble" 	mult="1" off="0" length="8" startbit="32"/>
+		<uint name="temprange"	mult="1" off="0" length="8" startbit="40"/>
+	</canmsg>
+
+	# indicates a number that varies with the module number (0-35)
+
+Explanation:
+	Modules now report if their measured temperature is out of the measureable range.
+	Realistically will never occur because the relay would trip before going over the range and we ain't racing in Siberia (yet), so it won't go under.
+	The number of entries was reduced because we only have 36 right now
+
+
+
+-----------------------
+------New Entries------
+-----------------------
+The following entries are new to the Generation cycle and thus lack pre-existing GUI entries.
+This section will be formatted with the entry, followed by a description of what the data is, including whether it is desired for Roll Date.
+
+--BMS Current Sense--
+Entry:
+	<canmsg type="data" address="0x130" id="bpscurrent">
+		<int name="current" mult="0.00212765957447" off="0"   length="16" startbit="0"/>
+	</canmsg>
+
+Description:
+	Master-based current sense. Not that complicated.
+
+Roll Date Priority:
+	High
+
+
+
+--Raw BMS Current Sense--
+Entry:
+	<canmsg type="data" address="0x131" id="bpsrawcurrent">
+		<uint name="current" mult="1" off="0"   length="16" startbit="0"/>
+	</canmsg>
+
+Description:
+	Raw unsigned int value from Master's current sense circuit. Useful for debugging.
+
+Roll Date Priority:
+	Low
+
+
+
+--Discharge Balance Trigger Voltage--
+Entry:
+	<canmsg type="data" address="0x140" id="dischargetarget">
+		<uint name="voltage" mult="0.00006866559853" off="0"  length="16" startbit="0"/>
+	</canmsg>
+
+Description:
+	Voltage that tells modules to begin discharge balance. Defaults to 4.2 volts.
+
+Roll Date Priority:
+	Medium
+
+
+
+--Pack Voltage--
+Entry:
+	<canmsg type="data" address="0x140" id="dischargetarget">
+		<float name="voltage" mult="1" off="0"  length="32" startbit="0"/>
+	</canmsg>
+
+Description:
+	Total pack voltage.
+
+Roll Date Priority:
+	High
+
+
+
+--Auto-Calibration Gain and Offset--
+Entry:
+	<canmsg type="data" address="0x1##" id="autocal#">
+		<float name="gain" 	   mult="1" off="0" length="32" startbit="0"/> 
+		<float name="offset"   mult="1" off="0" length="32" startbit="32"/> 
+	</canmsg>
+
+	# indicates a number that varies with the board number (0-17)
+
+Description:
+	Sense auto-calibration gain and offset for every board.
+
+Roll Date Priority:
+	Medium
+
+
+
+--Auto-Calibration Raw Reference and Zero Voltages
+Entry:
+	<canmsg type="data" address="0x1##" id="rawautocal#">
+		<uint name="ref" 	   mult="1" off="0" length="16" startbit="0"/> 
+		<uint name="zero"      mult="1" off="0" length="16" startbit="16"/> 
+		<uint name="refvolt"   mult="0.00006866559853" off="0" length="16" startbit="32"/> 
+		<uint name="zerovolt"  mult="0.00006866559853" off="0" length="16" startbit="48"/> 
+	</canmsg>
+
+	# indicates a number that varies with the board number (0-17)
+
+Description:
+	Raw voltages from the Sense ADC. Comes in both unsigned int and voltage flavors. Zero values are currently forced to zero, so those are kinda useless.
+
+Roll Date Priority:
+	Low
+
+
+
+--Enable/Disable Auto-Calibration--
+Entry:
+	<canmsg type="data" address="0x1A##" id="modautocal#">
+		<uint name="enable" mult="1" off="0" length="8" startbit="0"/>
+	</canmsg>
+
+	# indicates a number that varies with the board number (0-17)
+
+Description:
+	Enables or disables auto-calibration and resets gain and offset on disable.
+
+Roll Date Priority:
+	High
+
+
+
+--Module Failures--
+Entry:
+	<canmsg type="data" address="0x#" id="modulefault#">
+		<int name="missingmodule" mult="1" off="0" length="1" startbit="0"/>
+		<int name="undervolt"	  mult="1" off="0" length="1" startbit="1"/>
+		<int name="overvolt" 	  mult="1" off="0" length="1" startbit="2"/>
+		<int name="overtemp" 	  mult="1" off="0" length="1" startbit="3"/>
+		<int name="disconnect" 	  mult="1" off="0" length="1" startbit="4"/>
+	</canmsg>
+
+	# indicates a number that varies with the board number (0-17)
+
+Description:
+	Failure states of modules. Reported if the relay is opened.
+
+Roll Date Priority:
+	High
