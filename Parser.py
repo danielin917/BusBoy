@@ -22,10 +22,7 @@ import binascii
 # For interpreting Strings as Packed Binary Data
 from struct import *
 
-# For saving and loading pandas dataframe
-import pickle
-
-def get_label_encoded_data(filename, scale=(-1.0, 1.0)):
+def get_label_encoded_data(filename, scale=(0.0, 1.0)):
     dataframes = []
     with open(filename, 'r') as f:
         while True:
@@ -89,7 +86,7 @@ def find_val(cmd_string, cmd):
     print('failure')
     return 0
 
-def get_raw_data(dataFilename, XMLStructureFilename):
+def get_raw_data(dataFilename, XMLStructureFilename, scale=(0.0, 1.0)):
 
     with open(dataFilename) as f_handle:
         data_lines = f_handle.readlines()
@@ -148,11 +145,21 @@ def get_raw_data(dataFilename, XMLStructureFilename):
                         processed_val -= offset
                         processed_val /= multiplier
                         data += pack('c', processed_val)
-                    dataframes.append(pandas.DataFrame([unix_ts, binascii.hexlify(data)]))
-    return pandas.DataFrame(dataframes)
+                data = binascii.hexlify(data).decode('ascii')
+                bytes_as_floats = []
+                for _ in range(0, 16 - len(data)):
+                    bytes_as_floats.append(0.0)
+                for i in range(0, len(data)):
+                    bytes_as_floats.\
+                        append(float(int('0x' + data[i], 16) / 0xF))
+                dataframes.append(dict(zip([str(i) for i in range(16)], bytes_as_floats),
+                                                        **{'timestamp': float(unix_ts)}))
+    df = pandas.DataFrame(dataframes)
+    df = pandas.DataFrame(MinMaxScaler(feature_range=scale).fit_transform(df))
+    return df
 
 def save_parsed_data_to_file(dataframe, filename):
-    dataframe.to_pickle(filename)
+    dataframe.to_hdf(filename, 'df')
 
 def load_parsed_data_from_file(filename):
-    return pandas.read_pickle(filename)
+     return pandas.read_hdf(filename, 'df')
